@@ -2,4 +2,4 @@ vendor/gems/*
 !vendor/gems/cache/
 log/*
 db/*
-
+*~
