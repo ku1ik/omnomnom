@@ -1,0 +1,16 @@
+<div class="order">
+  <div class="eatery">
+    <h2><%= order.eatery.name %></h2>
+    <div class="info">
+    <% unless order.eatery.phone.blank? %>Phone: <%= order.eatery.phone %><% end %>
+    <% unless order.eatery.website.blank? %><%= link_to order.eatery.website, order.eatery.website %><% end %>
+    </div>
+  </div>
+  <ol>
+    <% order.order_items.each do |item| %>
+      <li><%= item.meal %><%= ", #{item.cost} pln" unless item.cost.blank? %> - <%= item.owner %></li>
+    <% end %>
+  </ol>
+  <p class="total">Total: <%= order.order_items.inject(0) { |sum, item| sum += item.cost.to_f } %> pln</p>
+  <%= partial :item_form, :order => order %>
+</div>

@@ -15,6 +15,7 @@ class Order
 
   property :id, Serial
   property :volunteer, String
+  property :eatery_id, Integer, :nullable => false
   property :created_at, DateTime
   property :updated_at, DateTime
   
@@ -29,6 +30,7 @@ class OrderItem
   property :meal, String, :nullable => false
   property :cost, Float
   property :owner, String, :nullable => false
+  property :order_id, Integer, :nullable => false
 
   belongs_to :order
 end

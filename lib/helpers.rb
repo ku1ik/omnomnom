@@ -6,7 +6,7 @@ module Omnomnom
       opts.each { |k,v| attrs << "#{k}=\"#{v}\" " } #.join(" ")
       %(<a href="#{href}" #{attrs}>#{name}</a>)
     end
-
+    
     def partial(template, *args)
       options = args.extract_options!
       options.merge!(:layout => false)

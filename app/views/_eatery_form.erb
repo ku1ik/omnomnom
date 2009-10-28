@@ -1,0 +1,8 @@
+<div class="new-eatery">
+<form action="/eateries" method="POST">
+  <input type="text" name="eatery[name]" class="name <%= 'error' if @eatery.errors.on(:name) %>" value="<%= @eatery.name %>" />
+  <input type="text" name="eatery[phone]" class="phone" value="<%= @eatery.phone %>" />
+  <input type="text" name="eatery[website]" class="website" value="<%= @eatery.website %>" />
+  <input type="submit" value="Add eatery" />
+</form>
+</div>

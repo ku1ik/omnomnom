@@ -1,0 +1,10 @@
+<div class="new-order">
+<form action="/orders" method="POST">
+  <select name="order[eatery_id]">
+    <% Eatery.all.each do |e| %>
+      <option value="<%= e.id %>"><%= e.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Create" />
+</form>
+</div>
