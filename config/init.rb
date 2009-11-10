@@ -5,10 +5,13 @@ APP_ROOT = File.join(File.dirname(__FILE__), '..')
 #Bundler.require_env(ENV['RACK_ENV'] || 'development')
 require 'sinatra'
 require 'dm-core'
+require 'dm-aggregates'
+require 'dm-timestamps'
+require 'dm-types'
+require 'dm-validations'
 require 'rack-lesscss'
 
 # connect to db
-#DataMapper.setup(:default, "sqlite3://#{File.expand_path(File.join(APP_ROOT, 'db', 'db.sqlite3'))}")
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{File.expand_path(File.join(APP_ROOT, 'db', 'db.sqlite3'))}")
 
 # load lib/*
