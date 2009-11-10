@@ -1,0 +1,10 @@
+sinatra -v '>=0.9.4'
+do_postgres -v '>=0.9.12'
+dm-core -v 0.10.1
+dm-aggregates -v 0.10.1
+dm-timestamps -v 0.10.1
+dm-types -v 0.10.1
+dm-validations -v 0.10.1
+less
+rack-lesscss -v '>=0.2'
+
