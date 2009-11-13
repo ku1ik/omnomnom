@@ -1,0 +1,9 @@
+<div class="orders">
+  <h2>Today's orders</h2>
+  <% if @orders.empty? %>
+    <p>No orders.</p>
+  <% else %>
+    <%= partial :order, :collection => @orders %>
+  <% end %>
+  <br class="clear" />
+</div>

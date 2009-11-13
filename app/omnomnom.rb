@@ -15,6 +15,7 @@ end
 
 before do
   @orders = Order.all(:created_at.gte => Date.today)
+  @eateries = Eatery.all(:id.not => [-1] + @orders.map { |o| o.eatery_id }.uniq)
   @eatery = Eatery.new
 end
 
@@ -22,7 +23,7 @@ get '/' do
   erb :home
 end
 
-post '/eateries' do
+post '/places' do
   @eatery = Eatery.new(params[:eatery])
   if @eatery.save
     redirect '/'

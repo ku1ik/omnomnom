@@ -1,9 +1,9 @@
 <div class="new-item">
 <form action="/items" method="POST">
   <input type="hidden" name="item[order_id]" value="<%= @order.id %>" />
-  <input type="text" name="item[meal]" class="meal <%= 'error' if @item && @item.order_id.to_i == order.id && @item.errors.on(:meal) %>" value="<%= @item.try(:meal) %>" />
-  <input type="text" name="item[cost]" class="cost" value="<%= @item.try(:owner) %>" />
-  <input type="text" name="item[owner]" class="owner <%= 'error' if @item && @item.order_id.to_i == order.id && @item.errors.on(:owner) %>" value="<%= @item.try(:owner) %>" />
-  <input type="submit" value="Add" />
+  <input type="text" name="item[meal]" class="meal <%= 'error' if @item && @item.order_id.to_i == @order.id && @item.errors.on(:meal) %>" value="<%= @item.try(:meal) %>" />
+  <input type="text" name="item[cost]" class="cost <%= 'error' if @item && @item.order_id.to_i == @order.id && @item.errors.on(:cost) %>" value="<%= @item.try(:cost) %>" />
+  <input type="text" name="item[owner]" class="owner <%= 'error' if @item && @item.order_id.to_i == @order.id && @item.errors.on(:owner) %>" value="<%= @item.try(:owner) %>" />
+  <input type="submit" value="Add!" />
 </form>
 </div>

@@ -1,9 +1,8 @@
 <div class="order">
   <div class="eatery">
-    <h2><%= order.eatery.name %></h2>
+    <h2><%= order.eatery.website.blank? ? order.eatery.name : link_to(order.eatery.name, order.eatery.website) %></h2>
     <div class="info">
-    <% unless order.eatery.phone.blank? %>Phone: <%= order.eatery.phone %><% end %>
-    <% unless order.eatery.website.blank? %><%= link_to order.eatery.website, order.eatery.website %><% end %>
+      Phone: <%= order.eatery.phone.blank? ? '?' : order.eatery.phone %>
     </div>
   </div>
   <ol>
