@@ -1,4 +1,5 @@
 vendor/gems/*
+bin/*
 !vendor/gems/cache/
 log/*
 db/*
